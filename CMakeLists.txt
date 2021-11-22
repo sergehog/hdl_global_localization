@@ -123,3 +123,18 @@ add_dependencies(hdl_global_localization_test ${PROJECT_NAME}_gencpp)
 target_link_libraries(hdl_global_localization_test
   ${catkin_LIBRARIES}
 )
+
+install(DIRECTORY launch
+        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+        )
+install(DIRECTORY config
+        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+        )
+install(TARGETS hdl_global_localization
+        ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+        LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+        RUNTIME DESTINATION ${CATKIN_GLOBAL_BIN_DESTINATION}
+        )
+
+install(TARGETS hdl_global_localization_node
+        RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
